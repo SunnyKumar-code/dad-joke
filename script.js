@@ -3,13 +3,14 @@ let getBtn = document.querySelector('button');
 
 
 async function getJoke() {
+    joke.innerText = "Loading..."; 
     let header = {
         headers: { 'X-Api-Key': 'VDcV5lUlgPP1X3kCkfSQog==QgeCVnr0Mcu7a5Rp' },
     };
     let url = 'https://api.api-ninjas.com/v1/dadjokes';
     
     try {
-        joke.innerText = "Loading..."; 
+       
         let res = await fetch(url, header);
         let data = await res.json();
         console.log(data);
